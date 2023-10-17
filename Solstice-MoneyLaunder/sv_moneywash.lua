@@ -13,12 +13,12 @@ AddEventHandler('SolsticeMoneyLaunder:Server:Invest', function(data)
     local xPlayer = QBCore.Functions.GetPlayer(src)
     local markedCash = xPlayer.Functions.GetItemByName("markedcash")
 
-    if markedCash and markedCash.amount >= amount then
+    if dirtyCash and dirtyCash.amount >= amount then
         local convertedAmount = math.floor(amount * rate)
 
-        xPlayer.Functions.RemoveItem("markedcash", amount)
+        xPlayer.Functions.RemoveItem("markedbills", amount)
         
-        TriggerClientEvent('QBCore:Notify', src, "You've invested " .. amount .. " marked cash in " .. businessName .. ". Please wait for " .. time .. " minutes.", 'success', 2000)
+        TriggerClientEvent('QBCore:Notify', src, "You've invested " .. amount .. " dirty cash in " .. businessName .. ". Please wait for " .. time .. " minutes.", 'success', 2000)
         
         local query = 'INSERT INTO investments (identifier, businessName, amountInvested, convertedAmount, endTime) VALUES (?, ?, ?, ?, DATE_ADD(NOW(), INTERVAL ? MINUTE))'
         local parameters = {
@@ -35,7 +35,7 @@ AddEventHandler('SolsticeMoneyLaunder:Server:Invest', function(data)
             end
         end)
     else
-        TriggerClientEvent('QBCore:Notify', src, "You don't have enough marked cash!", 'error', 2000)
+        TriggerClientEvent('QBCore:Notify', src, "You don't have enough dirty cash!", 'error', 2000)
     end
 end)
 
@@ -56,7 +56,7 @@ AddEventHandler('SolsticeMoneyLaunder:Server:CheckInvestment', function()
             local deleteQuery = 'DELETE FROM investments WHERE identifier = ? AND endTime <= NOW() LIMIT 1'
             exports.oxmysql:execute(deleteQuery, parameters)
 
-            TriggerClientEvent('QBCore:Notify', src, "You've collected " .. amount .. " washed money.", 'success', 2000)
+            TriggerClientEvent('QBCore:Notify', src, "You've collected " .. amount .. " washed cash.", 'success', 2000)
         else
             local ongoingQuery = 'SELECT * FROM investments WHERE identifier = ? AND endTime > NOW() LIMIT 1'
             exports.oxmysql:execute(ongoingQuery, parameters, function(ongoingResult)

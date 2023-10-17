@@ -1,11 +1,10 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 local pedCoords = { -- Handles Random ped spawning
-    {x = 1094.95, y = -321.57, z = 58.36, w = 8.42},
-    {x = -1371.07, y = -324.69, z = 38.32, w = 104.74},
-    {x = 1696.23, y = 4872.56, z = 41.04, w = 328.97},
-    {x = -150.05, y = 6429.43, z = 30.92, w = 46.65},
-    {x = 5016.47, y = -5745.76, z = 14.48, w = 149.06},
+    {x = 78.06, y = -196.1, z = 5.62, w = 8.42},
+    {x = 1201.15, y = 326.0, z = 23.76, w = 104.74},
+    {x = 1410.03, y = 1578.7, z = 10.04, w = 328.97},
+    {x = -1152.7, y = 672.32, z = 10.2, w = 46.65},
 }
 
 local selectedPedCoord = pedCoords[math.random(1, #pedCoords)]

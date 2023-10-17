@@ -102,52 +102,52 @@ function OpenBusinessSelectionMenu()
             }
         },
         {
-            header = 'UWU Cat Cafe',
+            header = 'Mr. Fuks Ricebox',
             txt = 'Time: 20 mins | Conversion Rate: 40%', --QB Menu label Visual Change only
             icon = 'fa fa-paw',
             params = {
                 event = 'SolsticeMoneyLaunder:Client:openAmountInput', --Keep this the same for every buissness
                 args = {
-                    businessName = 'UWU Cat Cafe',
+                    businessName = 'Mr. Fuks Ricebox',
                     rate = 0.40, --0.90 = 90% Actual conversion Rate EX. If you deposit 1000 you'll get $900 back
                     time = 20 --Wait time in minutes
                 }
             }
         },
         {
-            header = 'Vanilla Unicorn',
+            header = 'Triangle Club',
             txt = 'Time: 25 mins | Conversion Rate: 50%', --QB Menu label Visual Change only
             icon = 'fa fa-venus',
             params = {
                 event = 'SolsticeMoneyLaunder:Client:openAmountInput', --Keep this the same for every buissness
                 args = {
-                    businessName = 'Vanilla Unicorn',
+                    businessName = 'Triangle Club',
                     rate = 0.50, --0.90 = 90% Actual conversion Rate EX. If you deposit 1000 you'll get $900 back
                     time = 25 --Wait time in minutes
                 }
             }
         },
         {
-            header = 'Bennys',
+            header = 'Axels Mechanic Shop',
             txt = 'Time: 30 mins | Conversion Rate: 60%', --QB Menu label Visual Change only
             icon = 'fa fa-wrench',
             params = {
                 event = 'SolsticeMoneyLaunder:Client:openAmountInput', --Keep this the same for every buissness
                 args = {
-                    businessName = 'Vanilla Unicorn',
+                    businessName = 'Axels Mechanic Shop',
                     rate = 0.60, --0.90 = 90% Actual conversion Rate EX. If you deposit 1000 you'll get $900 back
                     time = 30 --Wait time in minutes
                 }
             }
         },
         {
-            header = 'PDM',
+            header = 'Auto Exotic',
             txt = 'Time: 35 mins | Conversion Rate: 70%', --QB Menu label Visual Change only
             icon = 'fas fa-car',
             params = {
                 event = 'SolsticeMoneyLaunder:Client:openAmountInput', --Keep this the same for every buissness
                 args = {
-                    businessName = 'PDM',
+                    businessName = 'Auto Exotic',
                     rate = 0.70, --0.90 = 90% Actual conversion Rate EX. If you deposit 1000 you'll get $900 back
                     time = 35 --Wait time in minutes
                 }
@@ -189,7 +189,7 @@ AddEventHandler('SolsticeMoneyLaunder:Client:openAmountInput', function(data)
         submitText = "Submit",
         inputs = {
             {
-                text = "Amount of Marked Cash ($)",
+                text = "Amount of Dirty Cash ($)",
                 name = "amount",
                 type = "number",
                 isRequired = true,
